@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <!-- Tailwind + Daisyui -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- icon -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Font -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+        <style>
+            *{
+                font-family: "Geist", sans-serif;
+            }
+        </style>
+
+
+</head>
+<body class="bg-[#F8FAFC] ">
+    <section class="pt-8 max-w-[1110px] mx-auto  ">
+        <h1 class=" text-3xl font-bold">Job Application Tracker</h1>
+        <br>
+        <div class="grid grid-cols-3 gap-6">
+            <div class=" pt-3 pl-3 h-[98px] w-[360px] bg-slate-200">
+                <h1 class="text-2xl">Total</h1>
+                <p id="total" class="font-bold text-2xl">0</p>
+            </div>
+            <div class="h-[98px] w-[360px]  pt-3 pl-3  bg-slate-200">
+                <h1 class="text-2xl">Interview</h1>
+                <p id="interview" class=  " text-2xl text-green-600 font-bold">0</p>
+            </div>
+            <div class="h-[98px] w-[360px] pt-3 pl-3  bg-slate-200">
+                <h1 class="text-2xl">Rejected</h1>
+                <p id="rejected" class="text-red-600 font-bold text-2xl">0</p>
+            </div>
+        </div>
+                <br>
+        <hr class="pb-6 text-gray-300 ">
+    </section>
+
+    <main class="pt-8 max-w-[1110px] mx-auto ">
+        <h1 class="font-bold text-3xl">Available Jobs</h1>
+        <br>
+        <br>
+        <div>
+            <button onclick="toggleStyle('all-filter-btn') " id="all-filter-btn" class=" bg-gray-300 px-6 py-2 cursor-pointer mr-4">All</button>
+            <button onclick="toggleStyle('interview-filter-btn')" id="interview-filter-btn" class="bg-gray-300 px-6 py-2 cursor-pointer mr-4">Interview</button>
+            <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn" class="bg-gray-300 px-6 py-2 cursor-pointer mr-4 ">Rejected</button>
+        </div>
+
+        <section id="filtered" class="hidden">
+
+        </section>
+
+        <div id="Allcards">
+            
+            <secion id="Card-1" class="flex justify-between mt-6 bg-white p-4">
+                <!-- Card 1 -->
+               
+                    <div >
+                        <h3 class="job-name font-bold">Grameenphone</h3>      
+                        <p class="position">Executive, IT Engineer, Marketing Officer</p>
+                        
+                        <br>
+                        
+                        <p class="salary">Full-time • TK30,000 - TK75,000</p>
+                        
+                        <br>
+                        <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                        
+                        <p class="summery">Grameenphone is a leading telecom company in Bangladesh offering private-sector jobs in IT, marketing, network engineering, and corporate roles.</p>
+                        <br>
+                        <div class="flex gap-2">
+                            <button id="interview" class="btn interview-btn">Interview</button>
+                            <button id="rejected" class="btn rejected-btn">Rejected</button>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                <button class="btn"><img src="./assets/delete.png"></button>
+            </secion>
+            
+            <secion id="Card-2" class=" mt-6 bg-white flex justify-between  p-4">
+                <!-- Card 2 -->
+                
+                    <div >
+                        <h3 class="job-name font-bold">BRAC</h3>
+                        <p class="position">Program Officer, Field Officer, IT Officer</p>
+                        
+                        <br>
+                        
+                        <p class="salary">Full-time • TK20,000 - TK35,000</p>
+                        
+                        <br>
+                        <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                        
+                        <p class="summery">BRAC is one of the largest NGOs in the world that offers development, field, and IT-related job opportunities across Bangladesh.</p>
+                        <br>
+                        <div class="flex gap-2">
+                            <button id="interview" class="btn interview-btn">Interview</button>
+                            <button id="rejected" class="btn rejected-btn">Rejected</button>
+                            
+                        </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                <button class="btn"><img src="./assets/delete.png"></button>
+            </secion>
+            
+            <secion id="Card-3" class=" mt-6 bg-white flex justify-between  p-4">
+                <!-- Card 3 -->
+            
+                    <div >
+                        <h3 class="job-name font-bold">Walton Group</h3>
+                        <p class="position">Engineer, Executive, Sales Officer</p>
+                        
+                        <br>
+                        
+                        <p class="salary">Full-time • TK20,000 - TK50,000</p>
+                        
+                        <br>
+                        <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                        
+                        <p class="summery">Walton Group is a leading electronics manufacturer that offers engineering, sales, and corporate executive positions.</p>
+                        <br>
+                        <div class="flex gap-2">
+                            <button id="interview" class="btn interview-btn">Interview</button>
+                            <button id="rejected" class="btn rejected-btn">Rejected</button>
+                            
+                        </div>
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                <button class="btn"><img src="./assets/delete.png"></button>
+            </secion>
+            
+            
+            <secion id="Card-4" class=" mt-6 bg-white flex justify-between  p-4">
+                <!-- Card 4 -->
+              
+                    <div >
+                        <h3 class="job-name font-bold">Square Pharmaceuticals</h3>
+                        <p class="position">Medical Promotion Officer, Officer, Chemist</p>
+                        
+                        <br>
+                        
+                        <p class="salary">Remote • Full-time • TK20,000 - TK45,000</p>
+                        
+                        <br>
+                        <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                        
+                        <p class="summery">Square Pharmaceuticals regularly recruits medical promotion officers, chemists, and corporate professionals in the pharmaceutical sector.</p>
+                        <br>
+                        <div class="flex gap-2">
+                            <button id="interview" class="btn interview-btn">Interview</button>
+                            <button id="rejected" class="btn rejected-btn">Rejected</button>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+    
+                <button class="btn"><img src="./assets/delete.png"></button>
+            </secion>
+            
+            
+            <secion id="Card-5" class=" mt-6 bg-white flex justify-between  p-4">
+                <!-- Card 5 -->
+              
+                    <div >
+                        <h3 class="job-name font-bold">Software Engineer at Shopify</h3>
+                        <p class="position">React, Node.js, API development</p>
+                        
+                        <br>
+                        
+                        <p class="salary">Remote • Full-time • $90,000-$120,000</p>
+                        
+                        <br>
+                        <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                        
+                        <p class="summery">Shopify is one of Canada's leading e-commerce companies, helping millions of businesses sell online</p>
+                        <br>
+                        <div class="flex gap-2">
+                            <button id="interview" class="btn interview-btn">Interview</button>
+                            <button id="rejected" class="btn rejected-btn">Rejected</button>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                <button class="btn"><img src="./assets/delete.png"></button>
+            </secion>
+            
+            
+            <secion id="Card-6" class=" mt-6 bg-white flex justify-between  p-4">
+                <!-- Card 6 -->
+           
+                 <div >
+                     <h3 class="job-name font-bold">Hotel Manager at Burj Al Arab</h3>
+                     <p class="position">Hospitality experience</p>
+                     
+                     <br>
+                     
+                     <p class="salary">AED 8,000-15,000/month</p>
+                     
+                     <br>
+                     <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                     
+                     <p class="summery">A Hotel Manager is responsible for managing the daily operations of a hotel.</p>
+                     <br>
+                     <div class="flex gap-2">
+                         <button id="interview" class="btn interview-btn">Interview</button>
+                         <button id="rejected" class="btn rejected-btn">Rejected</button>
+                         
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+         
+            <button class="btn"><img src="./assets/delete.png"></button>
+        </secion>
+        
+        <secion id="Card-7" class=" mt-6 bg-white flex justify-between  p-4">
+            <!-- Card 7 -->
+            
+                <div >
+                    <h3 class="job-name font-bold">Full Stack Developer at Booking.com(NED)</h3>
+                    <p class="position">React, Node.js, SQL</p>
+                    
+                    <br>
+                    
+                    <p class="salary">Remote • Full-time • €65,000-€95,000</p>
+                    
+                    <br>
+                    <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                    
+                    <p class="summery">A Full Stack Website Developer.</p>
+                    <br>
+                    <div class="flex gap-2">
+                        <button id="interview" class="btn interview-btn">Interview</button>
+                        <button id="rejected" class="btn rejected-btn">Rejected</button>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+           
+            <button class="btn"><img src="./assets/delete.png"></button>
+        </secion>
+        
+        <secion id="Card-8" class=" mt-6 bg-white flex justify-between  p-4">
+            <!-- Card 8 -->
+            
+                <div >
+                    <h3 class="job-name font-bold">Frontend Developer at SAP (Germany)</h3>
+                    <p class="position">JavaScript, React, UI/UX</p>
+                    
+                    <br>
+                    
+                    <p class="salary">Remote • Full-time • €60,000-€85,000/year</p>
+                    
+                    <br>
+                    <p class="Status text-center w-[120px] p-3 bg-sky-100">Not Applied</p>
+                    
+                    <p class="summery">A Frontend Developer builds the visual and interactive part of websites and web applications — the part users see and use in the browser.</p>
+                    <br>
+                    <div class="flex gap-2">
+                        <button id="interview" class="btn interview-btn">Interview</button>
+                        <button id="rejected" class="btn rejected-btn">Rejected</button>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+           
+            <button class="btn"><img src="./assets/delete.png"></button>
+        </secion>
+        
+        
+    </div>
+
+    <div id="no-jobs" class=" h-[400px] bg-white mt-10 flex flex-col justify-center " >
+
+        
+
+            <img class="mx-auto" src="./assets/jobs.png" alt="">
+            <h1 class="font-bold text-center">No jobs available</h1>
+            <p class="text-center">Check back soon for new job opportunities</p>
+            
+        
+    </div>
+        
+
+        
+
+
+              
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
