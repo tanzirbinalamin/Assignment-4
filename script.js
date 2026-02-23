@@ -90,6 +90,24 @@ document.addEventListener("click", e => {
         card.dataset.status = "rejected";
         calculate();
     }
+
+    if (e.target.closest(".delete-btn")) {
+    const card = e.target.closest(".job-card");
+    card.remove();
+
+    calculate();
+
+    // If no jobs left → show "No jobs"
+    const remainingCards = document.querySelectorAll(".job-card");
+    const noJobs = document.getElementById("no-jobs");
+
+    if (remainingCards.length === 0) {
+        noJobs.classList.remove("hidden");
+    } else {
+        noJobs.classList.add("hidden");
+    }
+}
+
 });
 
 
