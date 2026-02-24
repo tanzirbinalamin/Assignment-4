@@ -14,9 +14,9 @@
         div.innerHTML=`
         <h1>Hello</h1>
 
+        `
         const parent=document.quarySelector(body);
         parent.appendChild(div);
-        `
 
 3. What is Event Bubbling? And how does it work?
 
