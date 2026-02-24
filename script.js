@@ -48,11 +48,11 @@ function toggleStyle(id){
 
 tabButtons.forEach(button => {
     button.addEventListener("click", () => {
-        toggleStyle(button.id); // Active tab style
+        toggleStyle(button.id); 
 
         const filter = button.dataset.filter;
 
-        // Always query all job cards fresh
+  
         const jobCards = document.querySelectorAll(".job-card");
 
         jobCards.forEach(card => {
@@ -97,7 +97,6 @@ document.addEventListener("click", e => {
 
     calculate();
 
-    // If no jobs left → show "No jobs"
     const remainingCards = document.querySelectorAll(".job-card");
     const noJobs = document.getElementById("no-jobs");
 
