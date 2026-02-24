@@ -66,9 +66,9 @@ tabButtons.forEach(button => {
 });
 
 
-document.addEventListener("click", e => {
-    if (e.target.classList.contains("interview-btn")) {
-        const card = e.target.closest(".job-card");
+document.addEventListener("click", event => {
+    if (event.target.classList.contains("interview-btn")) {
+        const card = event.target.closest(".job-card");
         const statusText = card.querySelector(".job-status");
 
         statusText.textContent = "Interview";
@@ -79,8 +79,8 @@ document.addEventListener("click", e => {
         calculate();
     }
 
-    if (e.target.classList.contains("rejected-btn")) {
-        const card = e.target.closest(".job-card");
+    if (event.target.classList.contains("rejected-btn")) {
+        const card = event.target.closest(".job-card");
         const statusText = card.querySelector(".job-status");
 
         statusText.textContent = "Rejected";
@@ -91,8 +91,8 @@ document.addEventListener("click", e => {
         calculate();
     }
 
-    if (e.target.closest(".delete-btn")) {
-    const card = e.target.closest(".job-card");
+    if (event.target.closest(".delete-btn")) {
+    const card = event.target.closest(".job-card");
     card.remove();
 
     calculate();
